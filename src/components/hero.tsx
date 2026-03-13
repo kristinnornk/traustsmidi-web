@@ -70,7 +70,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <Image
-            src="/projects/3.png"
+            src="/projects/appartment/3.png"
             alt="Verkefni"
             fill
             className="object-cover"
