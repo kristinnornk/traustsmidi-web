@@ -91,7 +91,7 @@ function ProjectCarousel({ images }: { images: { src: string; alt: string }[] })
       {canScrollLeft && (
         <button
           onClick={() => scroll('left')}
-          className="absolute left-2 top-1/2 hidden h-8 w-8 -translate-y-1/2 sm:flex items-center justify-center rounded-full bg-background/40 text-muted-foreground transition-all hover:bg-background/70 hover:text-primary"
+          className="absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-background/40 text-muted-foreground transition-all hover:bg-background/70 hover:text-primary"
           aria-label="Scroll left"
         >
           <ChevronLeft className="h-5 w-5" />
@@ -101,7 +101,7 @@ function ProjectCarousel({ images }: { images: { src: string; alt: string }[] })
       {canScrollRight && (
         <button
           onClick={() => scroll('right')}
-          className="absolute right-2 top-1/2 hidden h-8 w-8 -translate-y-1/2 sm:flex items-center justify-center rounded-full bg-background/40 text-muted-foreground transition-all hover:bg-background/70 hover:text-primary"
+          className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-background/40 text-muted-foreground transition-all hover:bg-background/70 hover:text-primary"
           aria-label="Scroll right"
         >
           <ChevronRight className="h-5 w-5" />
