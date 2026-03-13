@@ -26,14 +26,14 @@ export function Footer() {
             Flýtileiðir
           </p>
           <div className="mt-4 flex flex-col gap-3">
-            <a href="#about" className="text-sm opacity-70 transition-opacity hover:opacity-100">
-              Um okkur
-            </a>
             <a href="#services" className="text-sm opacity-70 transition-opacity hover:opacity-100">
               Þjónusta
             </a>
             <a href="#projects" className="text-sm opacity-70 transition-opacity hover:opacity-100">
               Verkefni
+            </a>
+            <a href="#about" className="text-sm opacity-70 transition-opacity hover:opacity-100">
+              Um okkur
             </a>
           </div>
         </div>

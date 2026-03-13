@@ -7,9 +7,9 @@ import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'motion/react'
 
 const navLinks = [
-  { label: 'Um okkur', href: '#about' },
   { label: 'Þjónusta', href: '#services' },
   { label: 'Verkefni', href: '#projects' },
+  { label: 'Um okkur', href: '#about' },
 ] as const
 
 export function Navbar() {
