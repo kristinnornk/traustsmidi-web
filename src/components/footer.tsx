@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -26,13 +26,22 @@ export function Footer() {
             Flýtileiðir
           </p>
           <div className="mt-4 flex flex-col gap-3">
-            <a href="#services" className="text-sm opacity-70 transition-opacity hover:opacity-100">
+            <a
+              href="#services"
+              className="text-sm opacity-70 transition-opacity hover:opacity-100"
+            >
               Þjónusta
             </a>
-            <a href="#projects" className="text-sm opacity-70 transition-opacity hover:opacity-100">
+            <a
+              href="#projects"
+              className="text-sm opacity-70 transition-opacity hover:opacity-100"
+            >
               Verkefni
             </a>
-            <a href="#about" className="text-sm opacity-70 transition-opacity hover:opacity-100">
+            <a
+              href="#about"
+              className="text-sm opacity-70 transition-opacity hover:opacity-100"
+            >
               Um okkur
             </a>
           </div>
@@ -45,6 +54,7 @@ export function Footer() {
           <div className="mt-4 flex flex-col gap-3 text-sm opacity-70">
             <p>Sími: +354 775 2274</p>
             <p>Netfang: traustsmidi@traustsmidi.is</p>
+            <p className="mt-1">Apagata 10, 260 Reykjanesbær</p>
           </div>
         </div>
       </div>
@@ -55,5 +65,5 @@ export function Footer() {
         </p>
       </div>
     </footer>
-  )
+  );
 }

@@ -15,16 +15,16 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "Traust smíði — Fagleg smíðaþjónusta",
+    default: "Traust smíði — Húsasmíði og smíðaþjónusta á Suðurnesjum",
     template: "%s | Traust smíði",
   },
   description:
-    "Húsasmíðameistari með yfir 10 ára reynslu í alhliða smíða- og byggingarþjónustu. Viðhald, trésmíði og alhliða húsasmíði.",
+    "Fagleg smíðaþjónusta í Reykjanesbæ og á Suðurnesjum. Alhliða húsasmíði, viðhald og endurbætur.",
   metadataBase: new URL("https://traustsmidi.is"),
   openGraph: {
-    title: "Traust smíði — Fagleg smíðaþjónusta",
+    title: "Traust smíði — Fagleg smíðaþjónusta í Reykjanesbæ og á Suðurnesjum",
     description:
-      "Húsasmíðameistari með yfir 10 ára reynslu í alhliða smíða- og byggingarþjónustu.",
+      "Fagleg smíðaþjónusta í Reykjanesbæ og á Suðurnesjum. Alhliða húsasmíði, viðhald og endurbætur.",
     url: "https://traustsmidi.is",
     siteName: "Traust smíði",
     locale: "is_IS",
@@ -55,6 +55,41 @@ export default function RootLayout({
 }) {
   return (
     <html lang="is">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "HomeAndConstructionBusiness",
+              name: "Traust smíði",
+              description:
+                "Fagleg smíðaþjónusta í Reykjanesbæ og á Suðurnesjum. Alhliða húsasmíði, viðhald og endurbætur.",
+              url: "https://traustsmidi.is",
+              telephone: "+3547752274",
+              email: "traustsmidi@traustsmidi.is",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Address 12",
+                addressLocality: "Reykjanesbær",
+                postalCode: "260",
+                addressCountry: "IS",
+              },
+              areaServed: [
+                { "@type": "City", name: "Reykjanesbær" },
+                { "@type": "AdministrativeArea", name: "Suðurnes" },
+              ],
+              founder: {
+                "@type": "Person",
+                name: "Emil Breki Kristinsson",
+                jobTitle: "Húsasmíðameistari",
+              },
+              image: "https://traustsmidi.is/og-image.png",
+              priceRange: "$$",
+            }),
+          }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}
       >
