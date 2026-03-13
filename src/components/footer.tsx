@@ -43,8 +43,8 @@ export function Footer() {
             Hafa samband
           </p>
           <div className="mt-4 flex flex-col gap-3 text-sm opacity-70">
-            <p>Sími: +354 000 0000</p>
-            <p>Netfang: info@traustsmidi.is</p>
+            <p>Sími: +354 775 2274</p>
+            <p>Netfang: traustsmidi@traustsmidi.is</p>
           </div>
         </div>
       </div>

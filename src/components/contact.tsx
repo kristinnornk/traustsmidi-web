@@ -244,8 +244,8 @@ export function Contact() {
             </div>
             <div>
               <p className="text-xs text-muted-foreground">Sími</p>
-              <a href="tel:+3540000000" className="text-sm font-medium text-primary">
-                +354 000 0000
+              <a href="tel:+3547752274" className="text-sm font-medium text-primary">
+                +354 775 2274
               </a>
             </div>
           </div>
@@ -256,8 +256,8 @@ export function Contact() {
             </div>
             <div>
               <p className="text-xs text-muted-foreground">Netfang</p>
-              <a href="mailto:info@traustsmidi.is" className="text-sm font-medium text-primary">
-                info@traustsmidi.is
+              <a href="mailto:traustsmidi@traustsmidi.is" className="text-sm font-medium text-primary">
+                traustsmidi@traustsmidi.is
               </a>
             </div>
           </div>
