@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useRef } from 'react'
-import { useTranslations } from 'next-intl'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -28,7 +27,6 @@ const fadeUp = {
 }
 
 export function Contact() {
-  const t = useTranslations('contact')
   const [images, setImages] = useState<CompressedImage[]>([])
   const [previews, setPreviews] = useState<string[]>([])
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
@@ -108,9 +106,11 @@ export function Contact() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-primary md:text-4xl">
-            {t('title')}
+            Hafa samband
           </h2>
-          <p className="mt-4 text-muted-foreground">{t('subtitle')}</p>
+          <p className="mt-4 text-muted-foreground">
+            Lýstu verkefninu og við höfum samband við fyrsta tækifæri.
+          </p>
         </motion.div>
 
         <motion.div
@@ -122,17 +122,19 @@ export function Contact() {
         >
           {status === 'success' ? (
             <div className="mt-10 rounded-lg border border-accent/30 bg-accent/5 p-8 text-center">
-              <p className="text-lg font-medium text-primary">{t('success')}</p>
+              <p className="text-lg font-medium text-primary">
+                Takk fyrir fyrirspurnina! Verðum í sambandi við fyrsta tækifæri.
+              </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit(onSubmit)} className="mt-10 flex flex-col gap-5">
               <div>
                 <label className="mb-1.5 block text-sm font-medium text-foreground">
-                  {t('name')} *
+                  Nafn *
                 </label>
                 <input
-                  {...register('name', { required: true })}
-                  placeholder={t('namePlaceholder')}
+                  {...register('name')}
+                  placeholder="Fullt nafn"
                   className={`${inputClass} ${errors.name ? 'border-destructive' : ''}`}
                 />
               </div>
@@ -140,23 +142,23 @@ export function Contact() {
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label className="mb-1.5 block text-sm font-medium text-foreground">
-                    {t('email')} *
+                    Netfang *
                   </label>
                   <input
                     {...register('email')}
                     type="email"
-                    placeholder={t('emailPlaceholder')}
+                    placeholder="Netfangið þitt"
                     className={`${inputClass} ${errors.email ? 'border-destructive' : ''}`}
                   />
                 </div>
                 <div>
                   <label className="mb-1.5 block text-sm font-medium text-foreground">
-                    {t('phone')}
+                    Sími
                   </label>
                   <input
                     {...register('phone')}
                     type="tel"
-                    placeholder={t('phonePlaceholder')}
+                    placeholder="Símanúmer"
                     className={inputClass}
                   />
                 </div>
@@ -164,21 +166,21 @@ export function Contact() {
 
               <div>
                 <label className="mb-1.5 block text-sm font-medium text-foreground">
-                  {t('description')} *
+                  Lýsing á verkefni *
                 </label>
                 <textarea
-                  {...register('description', { required: true })}
+                  {...register('description')}
                   rows={5}
-                  placeholder={t('descriptionPlaceholder')}
+                  placeholder="Segðu okkur frá verkefninu..."
                   className={`${inputClass} resize-y ${errors.description ? 'border-destructive' : ''}`}
                 />
               </div>
 
               <div>
                 <label className="mb-1.5 block text-sm font-medium text-foreground">
-                  {t('images')}
+                  Myndir (valfrjálst)
                 </label>
-                <p className="mb-2 text-xs text-muted-foreground">{t('imagesHint')}</p>
+                <p className="mb-2 text-xs text-muted-foreground">Hámark 3 myndir</p>
 
                 {previews.length > 0 && (
                   <div className="mb-3 flex gap-3">
@@ -207,7 +209,7 @@ export function Contact() {
                     onClick={() => fileInputRef.current?.click()}
                     className="rounded-lg border border-dashed border-border px-4 py-3 text-sm text-muted-foreground transition-colors hover:border-accent hover:text-accent"
                   >
-                    + {t('chooseImages')}
+                    + Velja myndir
                   </button>
                 )}
                 <input
@@ -221,7 +223,7 @@ export function Contact() {
               </div>
 
               {status === 'error' && (
-                <p className="text-sm text-destructive">{t('error')}</p>
+                <p className="text-sm text-destructive">Villa kom upp. Vinsamlegast reyndu aftur.</p>
               )}
 
               <button
@@ -229,7 +231,7 @@ export function Contact() {
                 disabled={status === 'sending'}
                 className="mt-2 rounded-lg bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-50"
               >
-                {status === 'sending' ? t('sending') : t('submit')}
+                {status === 'sending' ? 'Sendi...' : 'Senda fyrirspurn'}
               </button>
             </form>
           )}
@@ -241,7 +243,7 @@ export function Contact() {
               <span className="text-lg">📞</span>
             </div>
             <div>
-              <p className="text-xs text-muted-foreground">{t('phone')}</p>
+              <p className="text-xs text-muted-foreground">Sími</p>
               <a href="tel:+3540000000" className="text-sm font-medium text-primary">
                 +354 000 0000
               </a>
@@ -253,7 +255,7 @@ export function Contact() {
               <span className="text-lg">✉️</span>
             </div>
             <div>
-              <p className="text-xs text-muted-foreground">{t('email')}</p>
+              <p className="text-xs text-muted-foreground">Netfang</p>
               <a href="mailto:info@traustsmidi.is" className="text-sm font-medium text-primary">
                 info@traustsmidi.is
               </a>

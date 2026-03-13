@@ -1,20 +1,18 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
+import Link from 'next/link'
 import Image from 'next/image'
 import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'motion/react'
 
 const navLinks = [
-  { key: 'about', href: '#about' },
-  { key: 'services', href: '#services' },
-  { key: 'projects', href: '#projects' },
+  { label: 'Um okkur', href: '#about' },
+  { label: 'Þjónusta', href: '#services' },
+  { label: 'Verkefni', href: '#projects' },
 ] as const
 
 export function Navbar() {
-  const t = useTranslations('nav')
   const [open, setOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
 
@@ -47,18 +45,18 @@ export function Navbar() {
           <div className="hidden items-center gap-8 md:flex">
             {navLinks.map((link) => (
               <a
-                key={link.key}
+                key={link.href}
                 href={link.href}
                 className="text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
               >
-                {t(link.key)}
+                {link.label}
               </a>
             ))}
             <a
               href="#contact"
               className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
             >
-              {t('contact')}
+              Hafa samband
             </a>
           </div>
 
@@ -69,7 +67,7 @@ export function Navbar() {
               onClick={() => setOpen(false)}
               className="rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
             >
-              {t('contact')}
+              Hafa samband
             </a>
             <button
               onClick={() => setOpen(!open)}
@@ -105,7 +103,7 @@ export function Navbar() {
                 <div className="flex flex-col items-center gap-8">
                   {navLinks.map((link, i) => (
                     <motion.a
-                      key={link.key}
+                      key={link.href}
                       href={link.href}
                       onClick={() => setOpen(false)}
                       initial={{ opacity: 0, x: 20 }}
@@ -113,7 +111,7 @@ export function Navbar() {
                       transition={{ delay: 0.1 + i * 0.05 }}
                       className="text-2xl font-medium text-foreground transition-colors hover:text-primary"
                     >
-                      {t(link.key)}
+                      {link.label}
                     </motion.a>
                   ))}
                   <motion.a
@@ -124,7 +122,7 @@ export function Navbar() {
                     transition={{ delay: 0.1 + navLinks.length * 0.05 }}
                     className="text-2xl font-medium text-foreground transition-colors hover:text-primary"
                   >
-                    {t('contact')}
+                    Hafa samband
                   </motion.a>
                 </div>
               </motion.div>

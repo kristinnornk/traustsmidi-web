@@ -1,13 +1,24 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
 import { Home, Hammer, HardHat, type LucideIcon } from 'lucide-react'
 import { motion } from 'motion/react'
 
-const services: { key: string; icon: LucideIcon }[] = [
-  { key: 'renovation', icon: Home },
-  { key: 'carpentry', icon: Hammer },
-  { key: 'general', icon: HardHat },
+const services: { title: string; description: string; icon: LucideIcon }[] = [
+  {
+    title: 'Viðhald og endurbætur',
+    description: 'Þak, gluggar, hurðir, gólf og annað sem þarf til að halda eigninni í góðu standi.',
+    icon: Home,
+  },
+  {
+    title: 'Trésmíði og smíðaverk',
+    description: 'Pallar, klæðningar, loft, milliloft, veggir og sérsmíðaðar lausnir eftir þörfum hvers verkefnis.',
+    icon: Hammer,
+  },
+  {
+    title: 'Alhliða húsasmíði',
+    description: 'Húsasmíði og byggingarþjónusta — fagleg vinna við smærri sem stærri verkefni.',
+    icon: HardHat,
+  },
 ]
 
 const fadeUp = {
@@ -16,8 +27,6 @@ const fadeUp = {
 }
 
 export function Services() {
-  const t = useTranslations('services')
-
   return (
     <section id="services" className="bg-secondary py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -29,15 +38,17 @@ export function Services() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-primary md:text-4xl">
-            {t('title')}
+            Þjónusta
           </h2>
-          <p className="mt-4 max-w-lg text-muted-foreground">{t('subtitle')}</p>
+          <p className="mt-4 max-w-lg text-muted-foreground">
+            Frá smærri verkefnum upp í heildarendurnýjun — alltaf vandað og faglegt.
+          </p>
         </motion.div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {services.map((service, i) => (
             <motion.div
-              key={service.key}
+              key={service.title}
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
@@ -47,10 +58,10 @@ export function Services() {
             >
               <service.icon className="h-8 w-8 text-accent" strokeWidth={1.5} />
               <h3 className="mt-4 font-heading text-lg font-semibold text-primary">
-                {t(`${service.key}.title`)}
+                {service.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {t(`${service.key}.description`)}
+                {service.description}
               </p>
             </motion.div>
           ))}

@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
 import { motion } from 'motion/react'
 
 const projectImages = [
@@ -16,8 +15,6 @@ const fadeUp = {
 }
 
 export function Projects() {
-  const t = useTranslations('projects')
-
   return (
     <section id="projects" className="py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -29,9 +26,11 @@ export function Projects() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-primary md:text-4xl">
-            {t('title')}
+            Verkefni
           </h2>
-          <p className="mt-4 max-w-lg text-muted-foreground">{t('subtitle')}</p>
+          <p className="mt-4 max-w-lg text-muted-foreground">
+            Skoðaðu úrval af verkefnum sem við höfum unnið.
+          </p>
         </motion.div>
 
         <motion.div
@@ -44,10 +43,10 @@ export function Projects() {
         >
           <div className="rounded-2xl border border-border bg-secondary p-4 sm:p-6 md:p-8">
             <h3 className="font-heading text-xl font-semibold text-primary">
-              {t('project1.title')}
+              Íbúðaendurnýjun
             </h3>
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              {t('project1.description')}
+              Íbúðin er ný endurnýjuð meðal annars allar innréttingar, gólfefni og rafmagn yfirfarið.
             </p>
             <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
               {projectImages.map((img, i) => (

@@ -1,10 +1,6 @@
-import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
 export function Footer() {
-  const t = useTranslations('footer')
-  const nav = useTranslations('nav')
-
   return (
     <footer className="border-t border-border bg-primary py-12 text-primary-foreground sm:py-16">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:gap-12 sm:px-6 md:grid-cols-3">
@@ -21,41 +17,41 @@ export function Footer() {
             <p className="font-heading text-xl font-semibold">Traust smíði</p>
           </div>
           <p className="mt-3 text-sm leading-relaxed opacity-70">
-            {t('description')}
+            Alhliða smíða- og byggingarþjónusta.
           </p>
         </div>
 
         <div>
           <p className="font-heading text-sm font-semibold uppercase tracking-wider opacity-60">
-            {t('quickLinks')}
+            Flýtileiðir
           </p>
           <div className="mt-4 flex flex-col gap-3">
             <a href="#about" className="text-sm opacity-70 transition-opacity hover:opacity-100">
-              {nav('about')}
+              Um okkur
             </a>
             <a href="#services" className="text-sm opacity-70 transition-opacity hover:opacity-100">
-              {nav('services')}
+              Þjónusta
             </a>
             <a href="#projects" className="text-sm opacity-70 transition-opacity hover:opacity-100">
-              {nav('projects')}
+              Verkefni
             </a>
           </div>
         </div>
 
         <div>
           <p className="font-heading text-sm font-semibold uppercase tracking-wider opacity-60">
-            {t('contactTitle')}
+            Hafa samband
           </p>
           <div className="mt-4 flex flex-col gap-3 text-sm opacity-70">
-            <p>{t('phone')}: +354 000 0000</p>
-            <p>{t('email')}: info@traustsmidi.is</p>
+            <p>Sími: +354 000 0000</p>
+            <p>Netfang: info@traustsmidi.is</p>
           </div>
         </div>
       </div>
 
       <div className="mx-auto mt-12 max-w-6xl border-t border-primary-foreground/10 px-4 pt-8 sm:px-6">
         <p className="text-sm opacity-50">
-          © {new Date().getFullYear()} Traust smíði. {t('rights')}
+          © {new Date().getFullYear()} Traust smíði. Öll réttindi áskilin.
         </p>
       </div>
     </footer>
