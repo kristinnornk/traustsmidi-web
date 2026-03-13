@@ -24,7 +24,7 @@ export function Hero() {
             Traust og fagleg smíðaþjónusta
           </h1>
           <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground sm:mt-6 sm:text-lg">
-            Alhliða smíða- og byggingarþjónusta. Viðhald, tré- og húsasmíði.
+            Alhliða húsasmíði, viðhald og endurbætur.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 sm:mt-8 sm:gap-4">
             <a

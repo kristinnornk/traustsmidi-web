@@ -41,7 +41,7 @@ export function Services() {
             Þjónusta
           </h2>
           <p className="mt-4 max-w-lg text-muted-foreground">
-            Frá smærri verkefnum upp í heildarendurnýjun — alltaf vandað og faglegt.
+            Metnaðarfull, vönduð og fagleg þjónusta.
           </p>
         </motion.div>
 

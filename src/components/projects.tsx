@@ -29,7 +29,7 @@ export function Projects() {
             Verkefni
           </h2>
           <p className="mt-4 max-w-lg text-muted-foreground">
-            Skoðaðu úrval af verkefnum sem við höfum unnið.
+            Nokkur verkefni sem við höfum unnið.
           </p>
         </motion.div>
 
