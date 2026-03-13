@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Professional carpentry you can trust",
+    "subtitle": "Master carpenter with over 10 years of experience in comprehensive construction and carpentry services.",
+    "cta": "Get a quote",
+    "cta2": "See projects",
+    "experience": "Years experience",
+    "projectsDone": "Projects",
+    "satisfaction": "Satisfaction"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "From smaller projects to full renovations — always quality craftsmanship.",
+    "renovation": {
+      "title": "Maintenance & repairs",
+      "description": "Roofing, windows, doors, flooring, and everything needed to keep your property in great shape."
+    },
+    "carpentry": {
+      "title": "Carpentry & woodwork",
+      "description": "Decks, cladding, ceilings, mezzanines, walls, and custom-built solutions tailored to each project."
+    },
+    "general": {
+      "title": "General construction",
+      "description": "House building and construction services — professional work on projects large and small."
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Browse a selection of our completed projects.",
+    "project1": {
+      "title": "Apartment renovation",
+      "description": "Fully renovated apartment including all interiors, flooring, and electrical inspection."
+    }
+  },
+  "about": {
+    "title": "About us",
+    "description": "Traust smíði was founded by Emil Breki Kristinsson, a master carpenter with over 10 years of experience in comprehensive construction and carpentry services.\n\nWe emphasize quality workmanship, reliability, and good communication from start to finish.",
+    "yearsLabel": "Years experience",
+    "projectsLabel": "Projects completed",
+    "guaranteeLabel": "Satisfaction"
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Describe your project and we'll get back to you as soon as possible.",
+    "name": "Name",
+    "namePlaceholder": "Full name",
+    "phone": "Phone",
+    "phonePlaceholder": "Phone number",
+    "email": "Email",
+    "emailPlaceholder": "Your email",
+    "description": "Project description",
+    "descriptionPlaceholder": "Tell us about your project...",
+    "images": "Images (optional)",
+    "imagesHint": "Maximum 3 images",
+    "chooseImages": "Choose images",
+    "submit": "Send enquiry",
+    "sending": "Sending...",
+    "success": "Thank you for your enquiry! We'll be in touch as soon as possible.",
+    "error": "Something went wrong. Please try again."
+  },
+  "footer": {
+    "description": "Comprehensive construction and carpentry services.",
+    "quickLinks": "Quick links",
+    "contactTitle": "Contact",
+    "phone": "Phone",
+    "email": "Email",
+    "rights": "All rights reserved."
+  }
+}

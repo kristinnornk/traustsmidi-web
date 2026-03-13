@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "home": "Heim",
+    "about": "Um okkur",
+    "services": "Þjónusta",
+    "projects": "Verkefni",
+    "contact": "Hafa samband"
+  },
+  "hero": {
+    "title": "Traust og fagleg smíðaþjónusta",
+    "subtitle": "Húsasmíðameistari með yfir 10 ára reynslu í alhliða smíða- og byggingarþjónustu.",
+    "cta": "Fá tilboð",
+    "cta2": "Sjá verkefni",
+    "experience": "Ára reynsla",
+    "projectsDone": "Verkefni",
+    "satisfaction": "Ánægja"
+  },
+  "services": {
+    "title": "Þjónusta",
+    "subtitle": "Frá smærri verkefnum upp í heildarendurnýjun — alltaf vandað og faglegt.",
+    "renovation": {
+      "title": "Viðhald og endurbætur",
+      "description": "þak, gluggar, hurðir, gólf og annað sem þarf til að halda eigninni í góðu standi."
+    },
+    "carpentry": {
+      "title": "Trésmíði og smíðaverk",
+      "description": "Pallar, klæðningar, loft, milliloft, veggir og sérsmíðaðar lausnir eftir þörfum hvers verkefnis."
+    },
+    "general": {
+      "title": "Alhliða húsasmíði",
+      "description": "Húsasmíði og byggingarþjónusta — fagleg vinna við smærri sem stærri verkefni."
+    }
+  },
+  "projects": {
+    "title": "Verkefni",
+    "subtitle": "Skoðaðu úrval af verkefnum sem við höfum unnið.",
+    "project1": {
+      "title": "Íbúðaendurnýjun",
+      "description": "Íbúðin er ný endurnýjuð meðal annars allar innréttingar, gólfefni og rafmagn yfirfarið."
+    }
+  },
+  "about": {
+    "title": "Um okkur",
+    "description": "Traust smíði var stofnað af Emil Breka Kristinssyni, húsasmíðameistara með yfir 10 ára reynslu í alhliða smíða- og byggingarþjónustu.\n\nLögð er áhersla á vandaða vinnu, áreiðanleika og góð samskipti frá upphafi til enda.",
+    "yearsLabel": "Ára reynsla",
+    "projectsLabel": "Verkefni lokið",
+    "guaranteeLabel": "Ánægja"
+  },
+  "contact": {
+    "title": "Hafa samband",
+    "subtitle": "Lýstu verkefninu og við höfum samband við fyrsta tækifæri.",
+    "name": "Nafn",
+    "namePlaceholder": "Fullt nafn",
+    "phone": "Sími",
+    "phonePlaceholder": "Símanúmer",
+    "email": "Netfang",
+    "emailPlaceholder": "Netfangið þitt",
+    "description": "Lýsing á verkefni",
+    "descriptionPlaceholder": "Segðu okkur frá verkefninu...",
+    "images": "Myndir (valfrjálst)",
+    "imagesHint": "Hámark 3 myndir",
+    "submit": "Senda fyrirspurn",
+    "sending": "Sendi...",
+    "success": "Takk fyrir fyrirspurnina! Verðum í sambandi við fyrsta tækifæri.",
+    "chooseImages": "Velja myndir",
+    "error": "Villa kom upp. Vinsamlegast reyndu aftur."
+  },
+  "footer": {
+    "description": "Alhliða smíða- og byggingarþjónusta.",
+    "quickLinks": "Flýtileiðir",
+    "contactTitle": "Hafa samband",
+    "phone": "Sími",
+    "email": "Netfang",
+    "rights": "Öll réttindi áskilin."
+  }
+}

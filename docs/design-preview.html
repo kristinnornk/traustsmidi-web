@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traust smíði — Design Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #09090B; color: #FAFAFA; padding: 60px 20px; }
+
+    h1 { text-align: center; font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 8px; }
+    .subtitle { text-align: center; color: #71717A; margin-bottom: 60px; font-size: 1rem; font-weight: 300; letter-spacing: 0.05em; }
+
+    .container { max-width: 800px; margin: 0 auto; }
+
+    .section { background: #18181B; border: 1px solid #27272A; border-radius: 20px; padding: 32px; margin-bottom: 40px; }
+    .section h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 4px; }
+    .section .desc { color: #71717A; font-size: 0.85rem; margin-bottom: 24px; font-weight: 300; }
+
+    .colors { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+    .color-row { display: flex; align-items: center; gap: 12px; }
+    .swatch { width: 50px; height: 50px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); flex-shrink: 0; }
+    .color-info { display: flex; flex-direction: column; }
+    .color-name { font-weight: 500; font-size: 0.8rem; color: #A1A1AA; }
+    .color-hex { color: #52525B; font-size: 0.72rem; font-family: 'Space Grotesk', monospace; }
+
+    .preview-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #3F3F46; margin-bottom: 14px; font-weight: 500; }
+    .mini-site { border-radius: 14px; overflow: hidden; }
+    .mini-nav { padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+    .mini-nav .brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; }
+    .mini-nav-links { display: flex; gap: 20px; font-size: 0.82rem; font-weight: 400; }
+    .mini-hero { padding: 50px 30px; text-align: center; }
+    .mini-hero h4 { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 12px; line-height: 1.15; }
+    .mini-hero p { font-size: 0.95rem; margin-bottom: 24px; font-weight: 300; }
+    .mini-btn { display: inline-block; padding: 13px 32px; border-radius: 10px; font-weight: 600; font-size: 0.9rem; }
+    .mini-features { padding: 0 24px 20px; display: flex; gap: 30px; justify-content: center; }
+    .mini-feature { text-align: center; }
+    .mini-feature .feat-num { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; }
+    .mini-feature .feat-label { font-size: 0.65rem; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; }
+    .mini-cards { padding: 0 24px 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    .mini-card { border-radius: 10px; padding: 18px; }
+    .mini-card .card-title { font-weight: 600; font-size: 0.85rem; margin-bottom: 4px; }
+    .mini-card .card-desc { font-size: 0.72rem; font-weight: 300; }
+
+    .hero-label { font-family: 'Space Grotesk', sans-serif; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #4472C4; margin-bottom: 6px; font-weight: 600; }
+
+    /* Hero A */
+    .hero-a { padding: 60px 30px; text-align: center; }
+    .hero-a h3 { font-family: 'Space Grotesk', sans-serif; font-size: 2.4rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; }
+    .hero-a p { font-size: 1rem; margin-bottom: 28px; font-weight: 300; max-width: 400px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+    .hero-a .btn-row { display: flex; gap: 12px; justify-content: center; margin-bottom: 40px; }
+    .hero-a .stats-row { display: flex; gap: 40px; justify-content: center; padding-top: 30px; border-top: 1px solid #DCE1EA; }
+    .hero-a .stat-num { font-family: 'Space Grotesk', sans-serif; font-size: 1.6rem; font-weight: 700; }
+    .hero-a .stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 400; }
+
+    /* Hero B */
+    .hero-b { display: grid; grid-template-columns: 1fr 1fr; min-height: 340px; }
+    .hero-b-text { padding: 50px 30px; display: flex; flex-direction: column; justify-content: center; }
+    .hero-b-text h3 { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 14px; }
+    .hero-b-text p { font-size: 0.9rem; margin-bottom: 24px; font-weight: 300; line-height: 1.6; }
+    .hero-b-text .trust-row { display: flex; gap: 16px; margin-top: 20px; }
+    .hero-b-text .trust-item { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; font-weight: 400; }
+    .hero-b-text .trust-icon { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; }
+    .hero-b-img { display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 300; position: relative; overflow: hidden; }
+    .hero-b-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #DCE1EA 0%, #EEF1F6 100%); }
+
+    /* Hero C */
+    .hero-c { position: relative; min-height: 360px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+    .hero-c-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #2A3650 0%, #1a2438 60%, #4472C4 100%); }
+    .hero-c-overlay { position: absolute; inset: 0; background: rgba(42,54,80,0.7); }
+    .hero-c-content { position: relative; z-index: 1; padding: 40px; }
+    .hero-c h3 { font-family: 'Space Grotesk', sans-serif; font-size: 2.4rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; color: #FBFBFD; }
+    .hero-c p { font-size: 1rem; margin-bottom: 28px; font-weight: 300; color: rgba(251,251,253,0.75); max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+    .hero-c .btn-row { display: flex; gap: 12px; justify-content: center; }
+
+    /* Hero D */
+    .hero-d { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; padding: 40px 30px; align-items: center; }
+    .hero-d-text h3 { font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 14px; }
+    .hero-d-text p { font-size: 0.9rem; margin-bottom: 24px; font-weight: 300; line-height: 1.6; }
+    .hero-d-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; }
+    .hero-d-card { border-radius: 12px; padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; min-height: 120px; }
+    .hero-d-card .card-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+    .hero-d-card .card-num { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 700; }
+    .hero-d-card.tall { grid-row: span 2; min-height: 250px; }
+  </style>
+</head>
+<body>
+
+  <h1>Traust smíði</h1>
+  <p class="subtitle">DESIGN PREVIEW &mdash; OCEAN SLATE</p>
+
+  <div class="container">
+
+    <!-- Color Palette -->
+    <div class="section">
+      <h2>Ocean Slate</h2>
+      <p class="desc">Blue-shifted. Clean. Confident. Professional with personality.</p>
+      <div class="colors">
+        <div class="color-row">
+          <div class="swatch" style="background: #2A3650;"></div>
+          <div class="color-info"><span class="color-name">Primary</span><span class="color-hex">#2A3650</span></div>
+        </div>
+        <div class="color-row">
+          <div class="swatch" style="background: #FBFBFD;"></div>
+          <div class="color-info"><span class="color-name">Background</span><span class="color-hex">#FBFBFD</span></div>
+        </div>
+        <div class="color-row">
+          <div class="swatch" style="background: #4472C4;"></div>
+          <div class="color-info"><span class="color-name">Accent</span><span class="color-hex">#4472C4</span></div>
+        </div>
+        <div class="color-row">
+          <div class="swatch" style="background: #EEF1F6;"></div>
+          <div class="color-info"><span class="color-name">Surface</span><span class="color-hex">#EEF1F6</span></div>
+        </div>
+        <div class="color-row">
+          <div class="swatch" style="background: #8994A8;"></div>
+          <div class="color-info"><span class="color-name">Muted</span><span class="color-hex">#8994A8</span></div>
+        </div>
+        <div class="color-row">
+          <div class="swatch" style="background: #DCE1EA;"></div>
+          <div class="color-info"><span class="color-name">Border</span><span class="color-hex">#DCE1EA</span></div>
+        </div>
+      </div>
+
+      <p class="preview-label">Full Preview</p>
+      <div class="mini-site" style="background: #FBFBFD; border: 1px solid #DCE1EA;">
+        <div class="mini-nav" style="border-bottom: 1px solid #DCE1EA;">
+          <span class="brand" style="color: #2A3650;">Traust smíði</span>
+          <div class="mini-nav-links">
+            <span style="color: #8994A8;">Um okkur</span>
+            <span style="color: #8994A8;">Þjónusta</span>
+            <span style="color: #8994A8;">Verkefni</span>
+            <span style="color: #4472C4;">Hafa samband</span>
+          </div>
+        </div>
+        <div class="mini-hero">
+          <h4 style="color: #2A3650;">Byggjum traust.<br>Smíðum framtíð.</h4>
+          <p style="color: #8994A8;">Fagleg og áreiðanleg byggingarþjónusta</p>
+          <span class="mini-btn" style="background: #2A3650; color: #FBFBFD;">Fá tilboð</span>
+        </div>
+        <div class="mini-features">
+          <div class="mini-feature"><p class="feat-num" style="color: #4472C4;">15+</p><p class="feat-label" style="color: #8994A8;">Ára reynsla</p></div>
+          <div class="mini-feature"><p class="feat-num" style="color: #4472C4;">200+</p><p class="feat-label" style="color: #8994A8;">Verkefni</p></div>
+          <div class="mini-feature"><p class="feat-num" style="color: #4472C4;">100%</p><p class="feat-label" style="color: #8994A8;">Ánægja</p></div>
+        </div>
+        <div class="mini-cards">
+          <div class="mini-card" style="background: #EEF1F6;"><p class="card-title" style="color: #2A3650;">Viðhald</p><p class="card-desc" style="color: #8994A8;">Húsaviðhald og endurbætur</p></div>
+          <div class="mini-card" style="background: #EEF1F6;"><p class="card-title" style="color: #2A3650;">Nýbygging</p><p class="card-desc" style="color: #8994A8;">Frá grunni upp í þak</p></div>
+          <div class="mini-card" style="background: #EEF1F6;"><p class="card-title" style="color: #2A3650;">Endurbætur</p><p class="card-desc" style="color: #8994A8;">Innréttingar og klæðning</p></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ========== HERO LAYOUTS ========== -->
+
+    <!-- HERO A: Centered Minimal -->
+    <div class="section">
+      <p class="hero-label">Hero A</p>
+      <h2>Centered Minimal</h2>
+      <p class="desc">Clean, Apple-style. Big headline, single CTA, stats row below. Simple and confident.</p>
+      <div class="mini-site" style="background: #FBFBFD; border: 1px solid #DCE1EA;">
+        <div class="mini-nav" style="border-bottom: 1px solid #DCE1EA;">
+          <span class="brand" style="color: #2A3650;">Traust smíði</span>
+          <div class="mini-nav-links">
+            <span style="color: #8994A8;">Um okkur</span>
+            <span style="color: #8994A8;">Þjónusta</span>
+            <span style="color: #8994A8;">Verkefni</span>
+            <span style="color: #4472C4; font-weight: 500;">Hafa samband</span>
+          </div>
+        </div>
+        <div class="hero-a">
+          <h3 style="color: #2A3650;">Byggjum traust.<br>Smíðum framtíð.</h3>
+          <p style="color: #8994A8;">Fagleg og áreiðanleg byggingarþjónusta á Suðurlandi. Frá hugmynd til lykla&shy;færslu.</p>
+          <div class="btn-row">
+            <span class="mini-btn" style="background: #2A3650; color: #FBFBFD;">Fá tilboð</span>
+            <span class="mini-btn" style="background: transparent; color: #2A3650; border: 1.5px solid #DCE1EA;">Sjá verkefni →</span>
+          </div>
+          <div class="stats-row">
+            <div><p class="stat-num" style="color: #4472C4;">15+</p><p class="stat-label" style="color: #8994A8;">Ára reynsla</p></div>
+            <div><p class="stat-num" style="color: #4472C4;">200+</p><p class="stat-label" style="color: #8994A8;">Verkefni</p></div>
+            <div><p class="stat-num" style="color: #4472C4;">100%</p><p class="stat-label" style="color: #8994A8;">Ánægja</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO B: Split Layout -->
+    <div class="section">
+      <p class="hero-label">Hero B</p>
+      <h2>Split — Text + Image</h2>
+      <p class="desc">Classic 50/50. Text left, photo right. Most common for service businesses. Strong visual presence.</p>
+      <div class="mini-site" style="background: #FBFBFD; border: 1px solid #DCE1EA;">
+        <div class="mini-nav" style="border-bottom: 1px solid #DCE1EA;">
+          <span class="brand" style="color: #2A3650;">Traust smíði</span>
+          <div class="mini-nav-links">
+            <span style="color: #8994A8;">Um okkur</span>
+            <span style="color: #8994A8;">Þjónusta</span>
+            <span style="color: #8994A8;">Verkefni</span>
+            <span style="color: #4472C4; font-weight: 500;">Hafa samband</span>
+          </div>
+        </div>
+        <div class="hero-b">
+          <div class="hero-b-text">
+            <h3 style="color: #2A3650;">Fagleg smíða&shy;þjónusta sem þú getur treyst</h3>
+            <p style="color: #8994A8;">Við sérhæfum okkur í húsaviðhaldi, endurbótum og nýbyggingum á Suðurlandi.</p>
+            <div>
+              <span class="mini-btn" style="background: #2A3650; color: #FBFBFD;">Fá tilboð</span>
+            </div>
+            <div class="trust-row">
+              <div class="trust-item" style="color: #8994A8;">
+                <span class="trust-icon" style="background: #EEF1F6; color: #4472C4;">✓</span> 15+ ára reynsla
+              </div>
+              <div class="trust-item" style="color: #8994A8;">
+                <span class="trust-icon" style="background: #EEF1F6; color: #4472C4;">✓</span> 200+ verkefni
+              </div>
+            </div>
+          </div>
+          <div class="hero-b-img">
+            <img src="data/3.png" alt="Verkefni" style="width: 100%; height: 100%; object-fit: cover; display: block; min-height: 340px;" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO C: Full-Width Dark Overlay -->
+    <div class="section">
+      <p class="hero-label">Hero C</p>
+      <h2>Full-Width Dark</h2>
+      <p class="desc">Photo background with dark overlay. Dramatic, bold. White text on dark. High impact first impression.</p>
+      <div class="mini-site" style="border: 1px solid #27272A;">
+        <div class="mini-nav" style="border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(42,54,80,0.9);">
+          <span class="brand" style="color: #FBFBFD;">Traust smíði</span>
+          <div class="mini-nav-links">
+            <span style="color: rgba(251,251,253,0.6);">Um okkur</span>
+            <span style="color: rgba(251,251,253,0.6);">Þjónusta</span>
+            <span style="color: rgba(251,251,253,0.6);">Verkefni</span>
+            <span style="color: #FBFBFD; font-weight: 500;">Hafa samband</span>
+          </div>
+        </div>
+        <div class="hero-c">
+          <div class="hero-c-bg"></div>
+          <div class="hero-c-overlay" style="background: url('') center/cover; opacity: 0.15;"></div>
+          <div class="hero-c-content">
+            <h3>Byggjum traust.<br>Smíðum framtíð.</h3>
+            <p>Fagleg og áreiðanleg byggingarþjónusta á Suðurlandi — frá grunni upp í þak.</p>
+            <div class="btn-row">
+              <span class="mini-btn" style="background: #FBFBFD; color: #2A3650;">Fá tilboð</span>
+              <span class="mini-btn" style="background: transparent; color: #FBFBFD; border: 1.5px solid rgba(251,251,253,0.3);">Sjá verkefni →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO D: Asymmetric Bento -->
+    <div class="section">
+      <p class="hero-label">Hero D</p>
+      <h2>Asymmetric Bento</h2>
+      <p class="desc">Modern editorial feel. Text left, bento grid of project cards right. Unique and eye-catching.</p>
+      <div class="mini-site" style="background: #FBFBFD; border: 1px solid #DCE1EA;">
+        <div class="mini-nav" style="border-bottom: 1px solid #DCE1EA;">
+          <span class="brand" style="color: #2A3650;">Traust smíði</span>
+          <div class="mini-nav-links">
+            <span style="color: #8994A8;">Um okkur</span>
+            <span style="color: #8994A8;">Þjónusta</span>
+            <span style="color: #8994A8;">Verkefni</span>
+            <span style="color: #4472C4; font-weight: 500;">Hafa samband</span>
+          </div>
+        </div>
+        <div class="hero-d">
+          <div class="hero-d-text">
+            <h3 style="color: #2A3650;">Byggjum traust.<br>Smíðum framtíð.</h3>
+            <p style="color: #8994A8;">Fagleg og áreiðanleg byggingarþjónusta á Suðurlandi. Viðhald, endurbætur og nýbyggingar.</p>
+            <div>
+              <span class="mini-btn" style="background: #2A3650; color: #FBFBFD;">Fá tilboð</span>
+            </div>
+          </div>
+          <div class="hero-d-grid">
+            <div class="hero-d-card tall" style="background: linear-gradient(180deg, #2A3650 0%, #1a2438 100%);">
+              <p class="card-num" style="color: #4472C4;">15+</p>
+              <p class="card-label" style="color: rgba(251,251,253,0.6);">Ára reynsla</p>
+            </div>
+            <div class="hero-d-card" style="background: #EEF1F6;">
+              <p class="card-label" style="color: #8994A8;">Viðhald</p>
+              <p class="card-num" style="color: #2A3650;">→</p>
+            </div>
+            <div class="hero-d-card" style="background: #EEF1F6;">
+              <p class="card-label" style="color: #8994A8;">Nýbygging</p>
+              <p class="card-num" style="color: #2A3650;">→</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
